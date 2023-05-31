@@ -1,0 +1,10 @@
+.textarea {
+   
+        height: 150px;
+        border-radius: 7px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding:20px;
+        font-family: sans-serif;
+    
+}

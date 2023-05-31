@@ -1,0 +1,18 @@
+
+.input {
+    padding: 8px;
+    /* height: 32px;
+    padding-left: 10px; */
+    border-radius: 7px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* border: 1px solid gray; */
+    border: none;
+    /* background-color: red; */
+
+}
+
+.label {
+    margin-bottom: 5px;
+}
+

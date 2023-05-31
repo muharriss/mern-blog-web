@@ -1,0 +1,601 @@
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: floralwhite;
+}
+
+.Parallax {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+.Parallax-c {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+}
+
+.Intro {
+  background-image: url(../assets/images/animeBG.jpg);
+}
+
+.intro-line-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-line {
+  color: white;
+  position: absolute;
+  bottom: 35px;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 1px;
+  z-index: 3;
+
+}
+
+.Logo {
+  margin-right: auto;
+}
+
+
+.Logo-img {
+  width: 90px;
+  height: 90px;
+  display: block
+}
+
+.Logo-img2 {
+  width: 90px;
+  height: 90px;
+  display: block;
+}
+
+.nav-text-wrapper {
+  display: flex;
+}
+
+.Nav-text {
+  color: white;
+  position: relative;
+  list-style-type: none;
+  text-decoration: none;
+  margin-right: 35px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2rem;
+
+}
+
+.Nav-text::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transition: width .5s;
+}
+
+.Nav-text:hover::after {
+  width: 95%;
+}
+
+.Nav-text2 {
+  position: relative;
+  color: black;
+  list-style-type: none;
+  text-decoration: none;
+  margin-right: 35px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2rem;
+
+}
+
+.Nav-text2::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transition: width .5s;
+}
+
+.Nav-text2:hover::after {
+  width: 95%;
+}
+
+.Content-title {
+  font-family: 'Prompt', sans-serif;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.Display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Bg-content {
+  background-color: FloralWhite;
+}
+
+.Co-foto {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  padding: 250px;
+  /* background-color: aqua; */
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+
+.Co-footer {
+  padding: 70px;
+  background-color: midnightblue;
+}
+
+.Text-footer {
+  margin-left: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #6d6ddf;
+  margin: 5px;
+}
+
+p a:hover {
+
+  color: white;
+  cursor: pointer;
+  transition: all .5s ease 0s;
+}
+
+.Text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+  font-family: sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  /* height: 100vh; */
+  position: relative;
+  top: 46%;
+
+}
+
+.Text2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  font-family: 'Prompt', sans-serif;
+  color: black;
+  font-size: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.Dsc {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.Title2 {
+  display: none;
+}
+
+.Content {
+  position: relative;
+  z-index: 2;
+  height: 500px;
+  width: 400px;
+
+  margin: 10px;
+
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Content2 {
+  position: relative;
+  z-index: 2;
+  height: 500px;
+  width: 400px;
+
+  margin: 10px;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Content3 {
+  position: relative;
+  z-index: 2;
+  height: 400px;
+  width: 300px;
+
+  margin: 10px;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Content4 {
+  position: relative;
+  z-index: 2;
+  height: 400px;
+  width: 500px;
+
+  margin: 10px;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Content5 {
+  position: relative;
+  z-index: 2;
+  height: 500px;
+  width: 500px;
+
+  margin: 10px;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Content6 {
+  position: relative;
+  z-index: 2;
+  height: 500px;
+  width: 300px;
+
+  margin: 10px;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Content-overlay {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 2em;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.25s;
+}
+
+.Content-overlay * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.Content-overlay:hover {
+  opacity: 100%;
+}
+
+.Content-overlay:hover * {
+  transform: translateY(0);
+}
+
+.Component {
+  color: white;
+  position: relative;
+  top: 81%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+}
+
+img {
+  width: 100%;
+}
+
+.Mob2 {
+  display: none;
+}
+
+.Manga2 {
+  display: none;
+}
+
+.Game2 {
+  display: none;
+}
+
+@media screen and (max-width:600px) {
+  /* .Text-footer {
+    font-weight: 600;
+  } */
+
+  .Co-footer {
+    padding: 70px 0;
+    line-height: 25px;
+
+  }
+
+
+  .Text2 {
+    font-size: 1.27778rem;
+    line-height: 2.16667rem;
+    text-align: center;
+  }
+
+  .Title {
+    display: none;
+  }
+
+  .Dsc {
+    display: none;
+  }
+
+  .Title2 {
+    display: block;
+  }
+
+  .Co-foto {
+    padding: 0;
+  }
+
+  .Content {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content2 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content3 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content4 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content5 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content6 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .Mob {
+    display: none;
+  }
+
+  .Manga {
+    display: none;
+  }
+
+  .Game {
+    display: none;
+  }
+
+  .Mob2 {
+    display: block;
+  }
+
+  .Manga2 {
+    display: block;
+  }
+
+  .Game2 {
+    display: block;
+  }
+
+  .Logo-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .Logo-img2 {
+    width: 80px;
+    height: 80px;
+  }
+
+}
+
+
+@media screen and (min-width:870px) and (max-width: 1159px) {
+  .Co-foto {
+    padding: 0;
+    padding-bottom: 100px;
+    width: auto;
+
+
+  }
+}
+
+@media screen and (min-width: 1159px) and (max-width:1340px) {
+  .Co-foto {
+    padding: 100px;
+    padding-top: 50px;
+    padding-bottom: 150px;
+  }
+}
+
+@media screen and (min-width:600px) and (max-width: 870px) {
+
+  .Co-foto {
+    padding: 100px;
+    padding-bottom: 0;
+
+  }
+
+
+
+  .Content {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content2 {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content3 {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content4 {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content5 {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0;
+  }
+
+  .Content6 {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0;
+  }
+
+  .Mob {
+    display: none;
+  }
+
+  .Manga {
+    display: none;
+  }
+
+  .Game {
+    display: none;
+  }
+
+  .Mob2 {
+    display: block;
+  }
+
+  .Manga2 {
+    display: block;
+  }
+
+  .Game2 {
+    display: block;
+  }
+}
+
+@media screen and (max-width:380px) {
+  .Foto {
+    max-width: 300px;
+  }
+
+  .Foto2 {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width:1340px) and (min-width:960px) {
+  .Foto2 {
+    max-width: 500px;
+  }
+}
+
+.Nav-scrolled {
+  display: none;
+}
+
+.Nav-scrolled2 {
+  display: block;
+}
+
+.Nav-scrolled3 {
+  color: black;
+}
+
+.Nav-scrolled3::after {
+  background-color: black;
+}

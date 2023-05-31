@@ -1,0 +1,17 @@
+.btn-danger {
+    /* margin-top:20px ; */
+    padding: 8px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 7px;
+    border: none;
+    background-color:maroon ;
+    color:white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.btn-danger:active {
+    background-color: red;
+    transition: all .3s ease 0s;
+    
+}

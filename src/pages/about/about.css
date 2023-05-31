@@ -1,0 +1,49 @@
+.about-co {
+    background-color: #30307e;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-wrapper {
+    width: 600px;
+    margin-top: 70px;
+    /* background-color: red; */
+}
+
+.about-title {
+    font-size: 45px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.about-dsc {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.email-title {
+    color: white;
+}
+
+.email-dsc {
+    color: darkgray ;
+}
+
+@media screen and (max-width:850px) {
+    .about-wrapper {
+       margin: 80px;
+        
+    }
+}
+
+@media screen and (max-width:480px) {
+    .about-wrapper {
+       margin:30px;
+        
+    }
+}
+
+
