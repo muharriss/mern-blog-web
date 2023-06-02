@@ -11,7 +11,7 @@ const DetailBlog = () => {
     const [data, setData] = useState({})
     useEffect(() => {
         const id = params.id
-        axios.get(`https://mern-blog-api.cyclic.app/v1/blog/post/${id}`,
+        axios.get(`https://mern-api.up.railway.app/v1/blog/post/${id}`,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -26,7 +26,7 @@ const DetailBlog = () => {
             })
     }, [params])
     // const image = `http://localhost:4000/${data.image}`
-    const image = data.image ? encodeURI(`https://mern-blog-api.cyclic.app/${data.image.replace("\\", "/")}`) : '';
+    const image = data.image ? encodeURI(`https://mern-api.up.railway.app/${data.image.replace("\\", "/")}`) : '';
     if (data.author) {
         return (
             <div  >

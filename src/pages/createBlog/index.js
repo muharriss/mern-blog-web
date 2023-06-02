@@ -20,7 +20,7 @@ const CreateBlog = () => {
     useEffect(() => {
         if(params.id) {
             setIsUpdate(true)
-            axios.get(`https://mern-blog-api.cyclic.app/v1/blog/post/${id}`,
+            axios.get(`https://mern-api.up.railway.app/v1/blog/post/${id}`,
             {
                 headers: {
                   'Authorization': `Bearer ${token}`
@@ -30,7 +30,7 @@ const CreateBlog = () => {
                 const data = res.data.data
                 dispatch(setForm('title', data.title))
                 dispatch(setForm('body', data.body))
-                dispatch(setImgPreview(`https://mern-blog-api.cyclic.app/${data.image}`))
+                dispatch(setImgPreview(`https://mern-api.up.railway.app/${data.image}`))
                 console.log('res:', data)
             })
             .catch(err => {

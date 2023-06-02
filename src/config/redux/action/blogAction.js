@@ -3,7 +3,7 @@ import axios from "axios"
 export const setDataBlog = (page) => {
     return (dispatch) => {
         const token = localStorage.getItem('token');
-        axios.get(`https://mern-blog-api.cyclic.app/v1/blog/posts?page=${page}&perPage=3&sort_by=createdAt&sort_order=desc`,
+        axios.get(`https://mern-api.up.railway.app/v1/blog/posts?page=${page}&perPage=3&sort_by=createdAt&sort_order=desc`,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`

@@ -47,7 +47,7 @@ const Blog = () => {
                     label: 'Ya',
                     onClick: () => {
                         const token = localStorage.getItem('token');
-                        axios.delete(`https://mern-blog-api.cyclic.app/v1/blog/post/${id}`,
+                        axios.delete(`https://mern-api.up.railway.app/v1/blog/post/${id}`,
                             {
                                 headers: {
                                     'Authorization': `Bearer ${token}`
@@ -98,7 +98,7 @@ const Blog = () => {
                     <div className="blogLink-wrapper">
                         {dataBlog.map(blog => {
                             return <BlogItem key={blog._id}
-                                img={`https://mern-blog-api.cyclic.app/${blog.image}`}
+                                img={`https://mern-api.up.railway.app/${blog.image}`}
                                 title={blog.title}
                                 body={blog.body}
                                 name={blog.author.name}
