@@ -18,11 +18,10 @@ const content = () => {
             <div className="Text2">
                 <p className="Title">HALLO I'M HARIS - A Web Developer From ID.</p>
                  {/* <p className="dsc">Just a normal human who likes films and anime </p> */}
-                <p className="Dsc">I believe there's no luck or shit, only fate </p>
+                <p className="Dsc">This website isnt done yet, so feel free to test</p>
               {/* <p className="title2">HALLO I'M HARIS - A Web Developer From ID. Just a normal human who likes films and
                     anime </p> */}
-                <p className="Title2">HALLO I'M HARIS - A Web Developer From ID. I believe there's no luck or shit, only
-                    fate </p>
+                <p className="Title2">HALLO I'M HARIS - A Web Developer From ID. This website isnt done yet, so feel free to test </p>
             </div>
             <div className="Co-foto ">
                 <p className="Content-title">Lover of...</p>

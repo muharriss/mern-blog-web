@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 150px;
-    /* background-color: red; */
+    z-index: 4;
 }
 
 
@@ -230,7 +230,7 @@
     }
 
     .blogItem-container {
-        margin-bottom:100px;
+        margin-bottom: 100px;
 
     }
 
@@ -281,8 +281,8 @@
         margin-left: 0;
     } */
 
-    
-    
+
+
     .dsc-wrapper {
         margin-right: 30px;
         margin-left: 30px
@@ -291,8 +291,8 @@
     .margin2 {
         margin-left: -190px;
         background-color: floralwhite;
-        padding-left:10px;
-        
+        padding-left: 10px;
+
 
     }
 
@@ -304,5 +304,5 @@
         margin-top: -30px;
     }
 
-   
+
 }
