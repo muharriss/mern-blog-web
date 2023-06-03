@@ -7,9 +7,9 @@ body {
   scroll-behavior: smooth;
 }
 
-body {
+/* body {
   background-color: floralwhite;
-}
+} */
 
 .Parallax {
   background-position: center;
@@ -144,9 +144,9 @@ header {
   justify-content: center;
 }
 
-.Bg-content {
+/* .Bg-content {
   background-color: FloralWhite;
-}
+} */
 
 .Co-foto {
   display: flex;

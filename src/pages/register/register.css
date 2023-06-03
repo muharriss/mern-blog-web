@@ -18,7 +18,7 @@ body {
 
 .right {
     width: 460px;
-    background-color: floralwhite;
+    /* background-color: floralwhite; */
     display: flex;
     flex-direction: column;
     justify-content: center;
