@@ -1,5 +1,5 @@
-import RegisterBg from './images/blogBg.jpg';
-import LoginBg from './images/blogBg2.jpg'
+import RegisterBg from './images/blogBgc.jpg';
+import LoginBg from './images/blogBg2c.jpg'
 import Logo from './images/logo.png'
 import Logo3 from './images/logo3.png'
 import BlogIntro from './images/blogBg3.jpg'

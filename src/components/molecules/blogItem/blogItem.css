@@ -50,6 +50,7 @@
     padding-left: 40px;
     color: #333333;
     font-weight: 500;
+    
 
 }
 
@@ -79,6 +80,7 @@
     /* margin-left: 680px; */
     display: flex;
     gap: 20px;
+    background-color: white;
 }
 
 .update {
@@ -208,7 +210,7 @@
     }
 
     .blogItemDsc-wrapper {
-        max-height: 200px;
+        max-height: 190px;
     }
 
     .blogItem-ellipsis-wrapper {
@@ -302,5 +304,11 @@
         margin-top: -30px;
     }
 
+    .blogItem-container {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
 
+    .dcs-author-wrapper {
+        margin-bottom: 30px;
+    }
 }
