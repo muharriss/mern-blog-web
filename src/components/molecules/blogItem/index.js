@@ -41,7 +41,7 @@ const BlogItem = (props) => {
                             </div>
                             <p className="view-detail">..view detail</p>
                             <div className="blogitem-author-wrapper">
-                                <p className="blogItem-author">By: {props.name} - {props.date}</p>
+                                <p className="blogItem-author">By : {props.name} - {props.date}</p>
                             </div>
                         </div>
                     </div>
