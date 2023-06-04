@@ -7,8 +7,10 @@ import axios from 'axios';
 const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const onSubmit = () => {
+        setLoading(true)
         const data = {
             username: username,
             password: password
@@ -32,10 +34,14 @@ const Login = () => {
                     alert(err.response.data.message)
                 }
             })
+            .finally(() => {
+                setLoading(false);
+            });
     }
 
     return (
         <div>
+            <div className={loading ? 'edit-component' : 'edit-component2'}></div>
             <Header />
             <div className='container'>
                 <div className='left'>
