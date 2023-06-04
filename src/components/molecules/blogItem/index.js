@@ -48,7 +48,7 @@ const BlogItem = (props) => {
                 </Link>
                 <div className="dsc-wrapper">
                     <div className="dcs-author-wrapper">
-                        <p className="blogItem-author">By: {props.name} - {props.date}</p>
+                        <p className="blogItem-author">By : {props.name} - {props.date}</p>
                     </div>
                     <div className="ellipsis-2">
                         <div className={toggle ? 'margin2' : 'margin1'} >
