@@ -8,13 +8,15 @@ export const setImgPreview = (payload) => {
     return { type: 'SET_IMG_PREVIEW', payload }
 }
 
-export const postToAPI = (form) => {
+export const postToAPI = (form, setLoading) => {
     const token = localStorage.getItem('token');
-    
+
     const data = new FormData()
     data.append('title', form.title)
     data.append('body', form.body)
     data.append('image', form.image)
+
+    setLoading(true)
 
     axios.post('https://mern-api.up.railway.app/v1/blog/post', data, {
         headers: {
@@ -31,15 +33,20 @@ export const postToAPI = (form) => {
             console.log('err', err)
             alert(err.response.data.message)
         })
+        .finally(() => {
+            setLoading(false);
+        });
 }
 
-export const updateToAPI = (form, id) => {
+export const updateToAPI = (form, id, setLoading) => {
     const token = localStorage.getItem('token');
 
     const data = new FormData()
     data.append('title', form.title)
     data.append('body', form.body)
     data.append('image', form.image)
+
+    setLoading(true)
 
     axios.put(`https://mern-api.up.railway.app/v1/blog/post/${id}`, data, {
         headers: {
@@ -56,4 +63,7 @@ export const updateToAPI = (form, id) => {
             console.log('err', err)
             alert(err.response.data.message)
         })
+        .finally(() => {
+            setLoading(false);
+        });
 }
