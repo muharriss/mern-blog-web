@@ -178,7 +178,6 @@
 
 
     .blogItem-dsc {
-
         padding-top: 30px;
         padding-bottom: 0px;
         color: black;
@@ -310,7 +309,4 @@
         margin-bottom: 30px;
     }
 
-    .blogItem-dsc {
-        font-weight: 300;
-    }
 }
