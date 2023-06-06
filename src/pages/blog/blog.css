@@ -45,7 +45,9 @@
     left: 62%; */
 }
 
-
+.loading-blog {
+    text-align: center;
+}
 
 @media screen and (max-width:888px) {
     .pagination-wrapper {

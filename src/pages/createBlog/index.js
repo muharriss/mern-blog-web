@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Button, Footer, Gap, Header, Input, TextArea, Upload } from "../../components";
+import { Button, Footer, Gap, Header, Input, Loading, TextArea, Upload } from "../../components";
 import './createBlog.css'
 import { useDispatch, useSelector } from "react-redux";
 import { postToAPI, setForm, setImgPreview, updateToAPI } from "../../config/redux/action";

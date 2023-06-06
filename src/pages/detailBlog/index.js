@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './detailBlog.css'
 import { BlogImg } from "../../assets";
-import { DetailBlogItem, Footer, Header } from "../../components";
+import { DetailBlogItem, Footer, Header, Loading } from "../../components";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -55,7 +55,7 @@ const DetailBlog = () => {
         )
     }
 
-    return <p>loading...</p>
+    return <div className="loading-detailBlog"><Loading/></div>
 }
 
 export default DetailBlog

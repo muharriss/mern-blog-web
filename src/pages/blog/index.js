@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BlogContent, BlogImg, BlogImg2, BlogImg3 } from "../../assets";
-import { BlogItem, BlogItem2, BtnDanger, Button, Footer, Header } from "../../components";
+import { BlogItem, BlogItem2, BtnDanger, Button, Footer, Header, Loading } from "../../components";
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import './blog.css'
 import { Gap } from "../../components";
@@ -20,7 +20,7 @@ const Blog = () => {
     console.log('page,', page)
 
     useEffect(() => {
-        dispatch(setDataBlog(counter))
+        dispatch(setDataBlog(counter, setLoading))
     }, [dispatch, counter])
     console.log('current page', counter);
 
@@ -83,6 +83,8 @@ const Blog = () => {
 
     }
 
+    const [loading, setLoading] = useState(false)
+
     return (
         <div>
             <div>
@@ -96,7 +98,7 @@ const Blog = () => {
                 <div className="Parallax-c Bg-content">
                     <Gap height={150} />
                     <div className="blogLink-wrapper">
-                        {dataBlog.map(blog => {
+                        {loading ? dataBlog.map(blog => {
                             return <BlogItem key={blog._id}
                                 img={`https://mern-api.up.railway.app/${blog.image}`}
                                 title={blog.title}
@@ -106,7 +108,7 @@ const Blog = () => {
                                 _id={blog._id}
                                 onDelate={confirmDelate}
                             />
-                        })}
+                        }) : <div className="loading-blog"><Loading/></div> }
                     </div>
                     <div className="pagination-co">
                         <div className="pagination-wrapper">

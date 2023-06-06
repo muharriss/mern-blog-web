@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const setDataBlog = (page) => {
+export const setDataBlog = (page, setLoading) => {
     return (dispatch) => {
         const token = localStorage.getItem('token');
         axios.get(`https://mern-api.up.railway.app/v1/blog/posts?page=${page}&perPage=3&sort_by=createdAt&sort_order=desc`,
@@ -24,6 +24,9 @@ export const setDataBlog = (page) => {
             .catch(err => {
                 console.log('error', err)
             })
+            .finally(() => {
+                setLoading(true);
+            });
     }
 }
 
