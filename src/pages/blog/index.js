@@ -27,7 +27,7 @@ const Blog = () => {
         // if(counter <= 1 ) {
         //     setCounter(1)
         // }
-        setLoading(false)
+        setLoading(counter <= 1 ? true : false )
     }
 
     const next = () => {
@@ -35,7 +35,7 @@ const Blog = () => {
         // if(counter === page.totalPage) {
         //     setCounter(page.totalPage)
         // }
-        setLoading(false)
+        setLoading(counter !== page.totalPage ? false : true)
     }
 
     const confirmDelate = (id) => {
