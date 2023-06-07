@@ -22,6 +22,12 @@
 
 .blog-img {
     max-width: 430px;
+    max-height: 430px;
+    object-fit: cover;
+}
+
+.blogItem-content {
+    max-width: 420px;
 }
 
 .blogItem-dsc {
@@ -219,6 +225,9 @@
         display: none;
     }
 
+    .blogItem-content {
+        max-width: none;
+    }
 }
 
 @media screen and (max-width:580px) {
@@ -309,4 +318,7 @@
         margin-bottom: 30px;
     }
 
+    .blogItem-content {
+        max-width: none;
+    }
 }

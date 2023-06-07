@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { BlogContent, BlogImg, BlogImg2, BlogImg3 } from "../../assets";
-import { BlogItem, BlogItem2, BtnDanger, Button, Footer, Header, Loading } from "../../components";
+import { BlogItem, BtnDanger, Button, Footer, Header, Loading } from "../../components";
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import './blog.css'
 import { Gap } from "../../components";
-import Axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setDataBlog } from "../../config/redux/action";
 
@@ -33,7 +31,7 @@ const Blog = () => {
     }
 
     const next = () => {
-        setCounter(counter != page.totalPage ? counter + 1 : page.totalPage)
+        setCounter(counter !== page.totalPage ? counter + 1 : page.totalPage)
         // if(counter === page.totalPage) {
         //     setCounter(page.totalPage)
         // }
