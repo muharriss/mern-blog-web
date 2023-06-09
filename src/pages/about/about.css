@@ -7,9 +7,20 @@
 }
 
 .about-wrapper {
-    width: 600px;
-    margin-top: 70px;
-    /* background-color: red; */
+    width: 895px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.about-dsc-co {
+    margin-left: 30px;
 }
 
 .about-title {
@@ -29,21 +40,32 @@
 }
 
 .email-dsc {
-    color: darkgray ;
+    color: darkgray;
 }
 
 @media screen and (max-width:850px) {
     .about-wrapper {
-       margin: 80px;
-        
+        flex-wrap: wrap;
+        margin-top: 100px;
+        max-width: 470px;
+    }
+
+    .about-img {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .about-dsc-co {
+        margin: 25px 80px;
+    }
+
+    .about-co {
+        height: auto;
     }
 }
 
 @media screen and (max-width:480px) {
-    .about-wrapper {
-       margin:30px;
-        
+    .about-dsc-co {
+        margin: 25px 30px;
     }
 }
-
-
