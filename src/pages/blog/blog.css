@@ -92,3 +92,21 @@
         margin-right: -30px;
     }
 }
+
+.gap-blog {
+    height: 150px;
+}
+
+.gap-blog2 {
+    height: 100px;
+}
+
+@media screen and (max-width:580px) {
+    .gap-blog {
+        height: 80px;
+    }
+
+    .gap-blog2 {
+        height: 80px;
+    }
+}

@@ -96,7 +96,8 @@ const Blog = () => {
                     </div> */}
                 </div>
                 <div className="Parallax-c Bg-content">
-                    <Gap height={150} />
+                    {/* <Gap height={150} /> */}
+                    <div className="gap-blog"/>
                     <div className="blogLink-wrapper">
                         {loading ? dataBlog.map(blog => {
                             return <BlogItem key={blog._id}
@@ -132,7 +133,8 @@ const Blog = () => {
 
                         </div>
                     </div>
-                    <Gap height={130} />
+                    {/* <Gap height={100} /> */}
+                    <div className="gap-blog2"></div>
                 </div>
                 <Footer />
             </div>
