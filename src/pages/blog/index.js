@@ -11,16 +11,15 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import axios from "axios";
 
 const Blog = () => {
-    const [counter, setCounter] = useState(1)
     const { dataBlog, page } = useSelector(state => state.blogReducer)
     const dispatch = useDispatch()
-
-    console.log('page,', page)
+    const [counter, setCounter] = useState(page.currentPage)
 
     useEffect(() => {
         dispatch(setDataBlog(counter, setLoading))
     }, [dispatch, counter])
-    console.log('current page', counter);
+    console.log('counter', counter);
+    console.log('page,', page)
 
     const previous = () => {
         setCounter(counter <= 1 ? 1 : counter - 1)
