@@ -49,6 +49,47 @@
     text-align: center;
 }
 
+.button-filter-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.button-filter {
+    border: none;
+    /* background-color:transparent; */
+    opacity: 50%;
+    font-family: 'Chivo', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2rem;}
+
+.button-filter2 {
+    border: none;
+    /* background-color:transparent; */
+    font-family: 'Chivo', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2rem;
+
+}
+
+.button-filter:hover {
+    opacity: 100%;
+    transition: all .5s ease 0s;
+}
+
+.no-blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.no-blog2 {
+   display: none;
+}
+
 @media screen and (max-width:888px) {
     .pagination-wrapper {
         width: 500px;
