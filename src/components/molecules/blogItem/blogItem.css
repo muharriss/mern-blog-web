@@ -189,6 +189,8 @@
         color: black;
         font-size: large;
         line-height: 1.8;
+        font-family: 'Roboto', sans-serif;
+        font-weight:300;
     }
 
     .view-detail {
@@ -200,7 +202,9 @@
         text-align: center;
         color: black;
         font-weight: 400;
-        font-size: 30px
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-weight:300;
     }
 
     .blogItem-author {
@@ -331,7 +335,7 @@
 
 @media screen and (max-width:450px) {
     .blog-img {
-        max-height:400px;
+        max-height: 400px;
     }
 }
 
