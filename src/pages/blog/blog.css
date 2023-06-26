@@ -59,19 +59,19 @@
 
 .button-filter {
     border: none;
-    /* background-color:transparent; */
     opacity: 50%;
     font-family: 'Chivo', sans-serif;
     font-size: 12px;
-    letter-spacing: 0.2rem;}
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+}
 
 .button-filter2 {
     border: none;
-    /* background-color:transparent; */
     font-family: 'Chivo', sans-serif;
     font-size: 12px;
     letter-spacing: 0.2rem;
-
+    cursor: pointer;
 }
 
 .button-filter:hover {
@@ -89,6 +89,7 @@
 .no-blog2 {
    display: none;
 }
+
 
 @media screen and (max-width:888px) {
     .pagination-wrapper {

@@ -121,7 +121,7 @@ const Blog = () => {
                     {/* <Gap height={150} /> */}
                     {/* <div className="gap-blog" /> */}
                     <div className="blogLink-wrapper">
-                        <p className={trigger && pageUser.totalPage === 0 ? "no-blog" : "no-blog2"}>Create your first Blog  <Link to='/blog/create-blog'>here!</Link></p>
+                        <div className={trigger && pageUser.totalPage === 0 ? "no-blog" : "no-blog2"}>Create your first Blog  <Link to='/blog/create-blog'>here!</Link></div>
                         {/* {loading ? dataBlog.map(blog => {
                             return <BlogItem key={blog._id}
                                 img={`https://mern-api.up.railway.app/${blog.image}`}
