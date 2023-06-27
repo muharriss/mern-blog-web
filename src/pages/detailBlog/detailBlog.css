@@ -23,7 +23,7 @@
 
 .detailBlog-author {
     font-size: larger;
-    font-weight: 500;
+    /* font-weight: 500; */
     margin-top: 50px;
     /* position: relative;
   left: 520px; */
@@ -41,5 +41,12 @@
     .detailBlog-wrapper {
         margin-left: 30px;
         margin-right: 30px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .detailBlog-dsc {
+        font-family: 'Roboto', sans-serif;
+        font-weight:300;
     }
 }
