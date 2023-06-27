@@ -41,6 +41,9 @@
 .view-detail {
     color: #7373ff;
     margin-left: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    font-size: large;
 }
 
 .blogItem-title {
@@ -201,10 +204,10 @@
     .blogItem-title {
         text-align: center;
         color: black;
-        font-weight: 400;
-        font-size: 30px;
+        font-size: 25px;
         font-family: 'Roboto', sans-serif;
         font-weight:300;
+        padding-top: 10px;
     }
 
     .blogItem-author {
