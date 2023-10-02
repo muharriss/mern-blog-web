@@ -1,3 +1,19 @@
+.blog-co {
+    /* pointer-events: none; */
+}
+.blog-co2 {
+    /* pointer-events: none; */
+    background-color: red;
+}
+
+.comment-action {
+    display: none;
+}
+
+.comment-action2 {
+    display: block;
+}
+
 .blog-intro {
     background-image: url(../../assets/images/blogBg3c.jpg);
 }
@@ -39,8 +55,8 @@
     width: 200px;
     margin-right: 200px;
     display: flex;
-    
-    
+
+
     /* position: relative;
     left: 62%; */
 }
@@ -87,7 +103,7 @@
 }
 
 .no-blog2 {
-   display: none;
+    display: none;
 }
 
 
@@ -99,7 +115,7 @@
 
     .button-modified2 {
         margin-right: auto;
-        
+
     }
 }
 
@@ -107,7 +123,7 @@
     .pagination-co {
         margin-right: 30px;
         margin-left: 30px;
-        
+
     }
 }
 

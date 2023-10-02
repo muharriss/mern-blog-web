@@ -18,7 +18,7 @@ export const postToAPI = (form, setLoading) => {
 
     setLoading(true)
 
-    axios.post('https://mern-api.up.railway.app/v1/blog/post', data, {
+    axios.post('https://mern-blog-api.cyclic.cloud/v1/blog/post', data, {
         headers: {
             'content-type': 'multipart/form-data',
             'Authorization': `Bearer ${token}`
@@ -48,7 +48,7 @@ export const updateToAPI = (form, id, setLoading) => {
 
     setLoading(true)
 
-    axios.put(`https://mern-api.up.railway.app/v1/blog/post/${id}`, data, {
+    axios.put(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}`, data, {
         headers: {
             'content-type': 'multipart/form-data',
             'Authorization': `Bearer ${token}`

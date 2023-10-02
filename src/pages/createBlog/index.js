@@ -16,11 +16,11 @@ const CreateBlog = () => {
 
     const params = useParams()
     const id = params.id
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('token') 
     useEffect(() => {
         if (params.id) {
             setIsUpdate(true)
-            axios.get(`https://mern-api.up.railway.app/v1/blog/post/${id}`,
+            axios.get(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -30,7 +30,8 @@ const CreateBlog = () => {
                     const data = res.data.data
                     dispatch(setForm('title', data.title))
                     dispatch(setForm('body', data.body))
-                    dispatch(setImgPreview(`https://mern-api.up.railway.app/${data.image}`))
+                    // dispatch(setImgPreview(`http://localhost:4000/${data.image}`))
+                    dispatch(setImgPreview(data.image))
                     console.log('res:', data)
                 })
                 .catch(err => {
@@ -56,6 +57,19 @@ const CreateBlog = () => {
         dispatch(setForm('image', file))
         dispatch(setImgPreview(URL.createObjectURL(file)))
     }
+
+    // useEffect(() => {
+    //     const handleUnload = () => {
+    //       window.location.reload();
+    //     };
+    
+    //     window.addEventListener('beforeunload', handleUnload);
+    
+    //     return () => {
+    //       window.removeEventListener('beforeunload', handleUnload);
+    //     };
+
+    //   }, []);
 
     return (
         <div>

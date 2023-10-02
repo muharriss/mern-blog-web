@@ -15,7 +15,7 @@ const Login = () => {
             username: username,
             password: password
         }
-        axios.post('https://mern-api.up.railway.app/v1/auth/login', data)
+        axios.post('http://localhost:4000/v1/auth/login', data)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
                 console.log('login success', res)

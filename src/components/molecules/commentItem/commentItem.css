@@ -1,0 +1,141 @@
+.commentItem-co {
+    position: fixed;
+    /* background-color: rgba(0, 0, 0, .5); */
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    display: flex;
+}
+
+/* .commentItem-layer {
+    background-color: black;
+    height: 100vh;
+    z-index: 5;
+
+} */
+
+.commentItem-left {
+    background-color: rgba(0, 0, 0, .5);
+    flex: 1;
+}
+
+.commentItem-wrapper {
+    background-color: white;
+    border-radius: 5px;
+    /* float: right; */
+    width: 600px;
+    max-width: 600px;
+}
+
+.commentItem-title-wrapper {
+    padding: 30px;
+    border-bottom: 1px solid silver;
+    display: flex;
+    justify-content: space-between;
+}
+
+.commentItem-scrollBox {
+    height: 89vh;
+    max-width: 600px;
+    overflow: auto;
+    padding: 30px;
+}
+
+.comment-form {
+    margin-top: 30px;
+}
+
+.comment-textArea {
+    height: 100px;
+    width: 100%;
+    border-radius: 7px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.comment-button {
+    margin-top: 5px;
+    width: 70px;
+}
+
+.comment-button2 {
+    margin-top: 5px;
+    width: 70px;
+    pointer-events: none;
+}
+
+.comment-content-co {
+    border-bottom: 1px solid silver;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.comment-author {
+    font-size: small;
+    color: darkblue;
+    margin-bottom: 4px;
+}
+
+.comment-text {
+    opacity: 80%;
+}
+
+.reply-wrapper {
+    margin-top: 8px;
+    display: flex;
+}
+
+.button-reply {
+    border: none;
+    opacity: 70%;
+    margin-right: 10px;
+    cursor: pointer;
+    color: dodgerblue;
+    border-radius: 2px;
+}
+
+.button-reply:hover {
+    background-color: #e6e6e6;
+}
+
+.comment-reply-content {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.more-wrapper {
+    position: relative;
+}
+
+.commentItem-delate {
+    position: absolute;
+    color: red;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 5px 20px;
+    background-color: white;
+}
+
+.commentItem-delate:hover {
+    background-color:  #e6e6e6;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* @media screen and (max-width:603px) {
+    .commentItem-wrapper {
+        width: 100%;
+    }
+} */

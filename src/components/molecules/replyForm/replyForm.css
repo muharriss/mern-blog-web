@@ -1,0 +1,58 @@
+.replyForm-co {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    height: 100vh;
+    width: 100%;
+    z-index: 5;
+}
+
+.replyForm-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.replyForm-contain {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.replyForm-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.replyForm-textArea {
+    height: 60px;
+    width: 300px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    font-family: sans-serif;
+    /* color: black; */
+    /* color: dodgerblue; */
+}
+
+.replyForm-button {
+    margin-top: 5px;
+    width: 70px;
+}
+
+.replyForm-button2 {
+    margin-top: 5px;
+    width: 70px;
+    pointer-events: none;
+}
+
+@media screen and (max-width:345px) {
+    .replyForm-contain {
+        width: 100%;
+    }
+    
+    .replyForm-textArea {
+        width: 100%;
+    }
+}

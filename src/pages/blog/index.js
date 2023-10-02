@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BlogItem, BtnDanger, Button, Footer, Header, Loading } from "../../components";
-import { BrowserRouter as Router, Link, Route, Routes, useParams } from 'react-router-dom';
+import { BlogItem, BtnDanger, Button, CommentItem, Footer, Header, Loading } from "../../components";
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import './blog.css'
 import { Gap } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,7 @@ import { setDataBlog, setDataBlogUser } from "../../config/redux/action";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import axios from "axios";
+import { UseBodyScrollLock } from "../../config";
 
 const Blog = () => {
     const { dataBlog, page } = useSelector(state => state.blogReducer)
@@ -49,7 +50,7 @@ const Blog = () => {
                     label: 'Ya',
                     onClick: () => {
                         const token = localStorage.getItem('token');
-                        axios.delete(`https://mern-api.up.railway.app/v1/blog/post/${id}`,
+                        axios.delete(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}`,
                             {
                                 headers: {
                                     'Authorization': `Bearer ${token}`
@@ -92,14 +93,17 @@ const Blog = () => {
     }
 
     const next2 = () => {
-        setCounter2(counter2 !== pageUser.totalPage && pageUser.totalPage !== 0  ? counter2 + 1 : pageUser.totalPage)
+        setCounter2(counter2 !== pageUser.totalPage && pageUser.totalPage !== 0 ? counter2 + 1 : pageUser.totalPage)
         setLoading(counter2 !== pageUser.totalPage && pageUser.totalPage !== 0 ? false : true)
     }
 
-    console.log('triger', trigger)
+    const [isLocked, scrollToggle] = UseBodyScrollLock()
 
     return (
-        <div>
+        <div className="blog-co" >
+            <div className={isLocked ? 'comment-action2' : 'comment-action'}>
+                <CommentItem onClick={scrollToggle} />
+            </div>
             <div>
                 <Header />
                 <div className='Parallax blog-intro'>
@@ -136,23 +140,29 @@ const Blog = () => {
                         {
                             loading ? trigger ? dataBlogUser.map(blog => {
                                 return <BlogItem key={blog._id}
-                                    img={`https://mern-api.up.railway.app/${blog.image}`}
+                                    // img={`http://localhost:4000/${blog.image}`}
+                                    img={blog.image}
                                     title={blog.title}
                                     body={blog.body}
                                     name={blog.author.name}
                                     date={blog.createdAt}
                                     _id={blog._id}
                                     onDelate={confirmDelate}
+                                    onClick={scrollToggle}
+                                    totalComment={blog.comment}
                                 />
                             }) : dataBlog.map(blog => {
                                 return <BlogItem key={blog._id}
-                                    img={`https://mern-api.up.railway.app/${blog.image}`}
+                                    // img={`http://localhost:4000/${blog.image}`}
+                                    img={blog.image}
                                     title={blog.title}
                                     body={blog.body}
                                     name={blog.author.name}
                                     date={blog.createdAt}
                                     _id={blog._id}
                                     onDelate={confirmDelate}
+                                    onClick={scrollToggle}
+                                    totalComment={blog.comment}
                                 />
                             }) : <div className="loading-blog"><Loading /></div>
                         }
@@ -162,7 +172,9 @@ const Blog = () => {
                         <div className="pagination-wrapper">
                             <div className="button-modified2">
                                 <Link to='/blog/create-blog'>
-                                    <Button title='Create Blog' />
+                                    <Button onClick={() => {
+                                        window.location.replace("/blog/create-blog")
+                                    }} title='Create Blog' />
                                 </Link>
                                 <Link>
                                     <BtnDanger title='Logout' onClick={logout} />

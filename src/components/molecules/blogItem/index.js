@@ -17,6 +17,30 @@ const BlogItem = (props) => {
 
     }
 
+    const [commentToggle, setCommentToggle] = useState(false)
+    const [likeToggle, setLikeToggle] = useState(false)
+
+    const handleCommentToggle = () => {
+        setCommentToggle(!commentToggle)
+        console.log('comment toggle', commentToggle)
+    }
+    const handleLikeToggle = () => {
+        setLikeToggle(!likeToggle)
+        console.log('like toggle', likeToggle)
+    }
+
+    if (!Array.isArray(props.totalComment)) {
+        return <p className="invalid">Data tidak valid</p>;
+    }
+
+    let totalCount = 0;
+    for (const comment of props.totalComment) {
+        totalCount++;
+        if (comment.reply) {
+            totalCount += comment.reply.length;
+        }
+    }
+
     return (
         <div className="blogItem-container">
             <div>
@@ -46,11 +70,39 @@ const BlogItem = (props) => {
                         </div>
                     </div>
                 </Link>
+                <div className="comment-wrapper">
+                    <div className="mLeft-7">
+                        <Link to={`${props._id}`} >
+                            <span onClick={props.onClick} className="material-symbols-outlined">
+                                comment
+                            </span>
+                        </Link>
+                    </div>
+                    <p className="count-comment">{totalCount}</p>
+                    {/* <span onClick={handleLikeToggle} className="material-symbols-outlined">
+                        favorite
+                    </span>
+                    <p className="count-comment">2</p> */}
+                </div>
                 <div className="dsc-wrapper">
                     <div className="dcs-author-wrapper">
                         <p className="blogItem-author">By : {props.name} - {props.date}</p>
                     </div>
-                    <div className="ellipsis-2">
+                    <div className="blogItem-more">
+                        <div className="comment-wrapper2">
+                            <div className="mLeft-7">
+                                <Link to={`${props._id}`} >
+                                    <span onClick={props.onClick} className="material-symbols-outlined">
+                                        comment
+                                    </span>
+                                </Link>
+                            </div>
+                            <p className="count-comment">{totalCount}</p>
+                            {/* <span onClick={handleLikeToggle} className="material-symbols-outlined">
+                                favorite
+                            </span>
+                            <p className="count-comment">2</p> */}
+                        </div>
                         <div className={toggle ? 'margin2' : 'margin1'} >
                             <p><Link to={`/blog/create-blog/${props._id}`} className="update">{toggle ? "Update" : ''}</Link></p>
                             <p className="line" >{toggle ? '|' : ''}</p>
@@ -58,10 +110,10 @@ const BlogItem = (props) => {
                             <p onClick={handleToggle} className="ellipsis">︙</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
+
     );
 }
 
