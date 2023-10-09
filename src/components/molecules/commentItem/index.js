@@ -129,7 +129,7 @@ const CommentItem = (props) => {
                             return (
                                 <div className="comment-content-co" key={comment._id}>
                                     <div className="comment-content" >
-                                        <p className="comment-author">@{comment.author}</p>
+                                        <p className="comment-author">@{comment.author.name}</p>
                                         <p className="comment-text">
                                             {comment.text.split("\n").map((item, key) => {
                                                 return (
@@ -159,7 +159,7 @@ const CommentItem = (props) => {
                                     {comment.reply.map(reply => {
                                         return (
                                             <div className="comment-reply-content" key={reply._id} >
-                                                <p className="comment-author">@{reply.author}</p>
+                                                <p className="comment-author">@{reply.author.name}</p>
                                                 <p className="comment-text">
                                                     {reply.text.split("\n").map((item, key) => {
                                                         return (
