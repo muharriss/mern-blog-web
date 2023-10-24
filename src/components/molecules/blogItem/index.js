@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { BlogImg } from "../../../assets";
 import './blogItem.css'
 import { BrowserRouter as Router, Link, Route, Routes, useParams } from 'react-router-dom';
+import axios from "axios";
+import { useDispatch } from "react-redux";
 
 
 const BlogItem = (props) => {
+    const dispatch = useDispatch()
     const margin = {
         margin: 100
     }
@@ -29,6 +32,29 @@ const BlogItem = (props) => {
         console.log('like toggle', likeToggle)
     }
 
+    // const [hidden, setHidden] = useState()
+    // console.log('hidden', hidden)
+    // console.log("hidden", props.hidden)
+
+    const token = localStorage.getItem('token');
+    const hendleHidden = () => {
+        axios.put(`http://localhost:4000/v1/blog/post/${props._id}/status`, {},
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(res => {
+                console.log('success', res)
+                // setHidden(res.data.data.hidden)
+                dispatch(props.dispatch)
+                // console.log("hidden", hidden)
+            })
+            .catch(err => {
+                console.log("err", err)
+            })
+    }
+
     if (!Array.isArray(props.totalComment)) {
         return <p className="invalid">Data tidak valid</p>;
     }
@@ -49,6 +75,9 @@ const BlogItem = (props) => {
                         <p className="blogItem-title-component">title</p>
                     </div>
                     <div className={toggle ? 'margin2' : 'margin1'} >
+                        <span onClick={hendleHidden} className="material-symbols-outlined">
+                            {props.hidden == true ? toggle ? "public_off" : "" : toggle ? "public" : ""}
+                        </span>
                         <p><Link to={`/blog/create-blog/${props._id}`} className="update">{toggle ? "Update" : ''}</Link></p>
                         <p className="line" >{toggle ? '|' : ''}</p>
                         <p className="delate" onClick={() => props.onDelate(props._id)}>{toggle ? 'Delate' : ''}</p>
@@ -104,6 +133,9 @@ const BlogItem = (props) => {
                             <p className="count-comment">2</p> */}
                         </div>
                         <div className={toggle ? 'margin2' : 'margin1'} >
+                            <span onClick={hendleHidden} className="material-symbols-outlined">
+                                {props.hidden == true ? toggle ? "public_off" : "" : toggle ? "public" : ""}
+                            </span>
                             <p><Link to={`/blog/create-blog/${props._id}`} className="update">{toggle ? "Update" : ''}</Link></p>
                             <p className="line" >{toggle ? '|' : ''}</p>
                             <p className="delate" onClick={() => props.onDelate(props._id)}>{toggle ? 'Delate' : ''}</p>

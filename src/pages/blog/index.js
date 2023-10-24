@@ -150,6 +150,8 @@ const Blog = () => {
                                     onDelate={confirmDelate}
                                     onClick={scrollToggle}
                                     totalComment={blog.comment}
+                                    dispatch = {setDataBlog(counter)}
+                                    hidden = {blog.hidden}
                                 />
                             }) : dataBlog.map(blog => {
                                 return <BlogItem key={blog._id}
@@ -163,6 +165,8 @@ const Blog = () => {
                                     onDelate={confirmDelate}
                                     onClick={scrollToggle}
                                     totalComment={blog.comment}
+                                    dispatch = {setDataBlog(counter)}
+                                    hidden = {blog.hidden}
                                 />
                             }) : <div className="loading-blog"><Loading /></div>
                         }
