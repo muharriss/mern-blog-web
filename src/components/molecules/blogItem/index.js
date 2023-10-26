@@ -38,7 +38,7 @@ const BlogItem = (props) => {
 
     const token = localStorage.getItem('token');
     const hendleHidden = () => {
-        axios.put(`http://localhost:4000/v1/blog/post/${props._id}/status`, {},
+        axios.put(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${props._id}/status`, {},
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
