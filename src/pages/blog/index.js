@@ -18,12 +18,12 @@ const Blog = () => {
     const [counter, setCounter] = useState(page.currentPage)
     const [counter2, setCounter2] = useState(pageUser.currentPage)
     const [trigger, setTrigger] = useState(false)
-
+    const [refresh, setRrefresh] = useState(false)
 
     useEffect(() => {
         dispatch(setDataBlog(counter, setLoading))
         dispatch(setDataBlogUser(counter2, setLoading))
-    }, [dispatch, counter, counter2])
+    }, [dispatch, counter, counter2, refresh])
 
     const previous = () => {
         setCounter(counter <= 1 ? 1 : counter - 1)
@@ -152,6 +152,7 @@ const Blog = () => {
                                     totalComment={blog.comment}
                                     dispatch = {setDataBlog(counter)}
                                     hidden = {blog.hidden}
+                                    refresh = {() => setRrefresh(!refresh)}
                                 />
                             }) : dataBlog.map(blog => {
                                 return <BlogItem key={blog._id}
@@ -167,6 +168,7 @@ const Blog = () => {
                                     totalComment={blog.comment}
                                     dispatch = {setDataBlog(counter)}
                                     hidden = {blog.hidden}
+                                    refresh = {() => setRrefresh(!refresh)}
                                 />
                             }) : <div className="loading-blog"><Loading /></div>
                         }
