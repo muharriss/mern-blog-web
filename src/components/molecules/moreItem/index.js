@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { confirmAlert } from 'react-confirm-alert';
+import { useDispatch } from "react-redux";
 
 const MoreItem = (props) => {
 
+    const dispatch = useDispatch()
     const [moreToggle, setMoreToggle] = useState(false)
 
     const confirmDelate = () => {
@@ -24,7 +26,9 @@ const MoreItem = (props) => {
                                 })
                                 .then(res => {
                                     console.log('delete success: ', res.data)
-                                    window.location.reload()
+                                    // window.location.reload()
+                                    dispatch(props.refreshCount)
+                                    dispatch(props.refreshForm)
                                 })
                                 .catch(err => {
                                     console.log('err: ', err)

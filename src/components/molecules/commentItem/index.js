@@ -173,6 +173,8 @@ const CommentItem = (props) => {
                                                 <MoreItem
                                                     _id={data._id}
                                                     commentId={comment._id}
+                                                    refreshCount = {props.refresh}
+                                                    refreshForm = {() => setRrefresh(!refresh)}
                                                 />
                                             </div>
                                         </div>
@@ -204,6 +206,8 @@ const CommentItem = (props) => {
                                                             _id={data._id}
                                                             commentId={comment._id}
                                                             replyId={reply._id}
+                                                            refreshCount = {props.refresh}
+                                                            refreshForm = {() => setRrefresh(!refresh)}
                                                         />
                                                     </div>
                                                 </div>
