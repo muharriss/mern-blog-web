@@ -33,7 +33,10 @@ const BlogItem = (props) => {
     }
 
     const token = localStorage.getItem('token');
+    const [loading, setLoading] = useState(false)
+    // console.log("loading", loading)
     const handleHidden = () => {
+        setLoading(true)
         axios.put(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${props._id}/status`, {},
             {
                 headers: {
@@ -46,6 +49,9 @@ const BlogItem = (props) => {
             })
             .catch(err => {
                 console.log("err", err)
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
 
@@ -69,7 +75,7 @@ const BlogItem = (props) => {
                         <p className="blogItem-title-component">title</p>
                     </div>
                     <div className={toggle ? 'margin2' : 'margin1'} >
-                        <span onClick={handleHidden} className="material-symbols-outlined">
+                        <span onClick={handleHidden} className={loading ? "material-symbols-outlined button-disable" : "material-symbols-outlined" }>
                             {props.hidden == true ? toggle ? "public_off" : "" : toggle ? "public" : ""}
                         </span>
                         <p><Link to={`/blog/create-blog/${props._id}`} className="update">{toggle ? "Update" : ''}</Link></p>
@@ -127,7 +133,7 @@ const BlogItem = (props) => {
                             <p className="count-comment">2</p> */}
                         </div>
                         <div className={toggle ? 'margin2' : 'margin1'} >
-                            <span onClick={handleHidden} className="material-symbols-outlined">
+                            <span onClick={handleHidden} className={loading ? "material-symbols-outlined button-disable" : "material-symbols-outlined" }>
                                 {props.hidden == true ? toggle ? "public_off" : "" : toggle ? "public" : ""}
                             </span>
                             <p><Link to={`/blog/create-blog/${props._id}`} className="update">{toggle ? "Update" : ''}</Link></p>

@@ -162,6 +162,11 @@
     color: black;
 }
 
+.button-disable {
+    /* pointer-events: none; */
+    cursor: not-allowed;
+}
+
 .material-symbols-outlined:hover {
     background-color: #e6e6e6;
     border-radius: 12px;

@@ -5,12 +5,16 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ReplyForm from "../replyForm";
 import { MoreItem, MoreItemreReply } from "../..";
+import { useDispatch } from "react-redux";
 
 const CommentItem = (props) => {
+    const dispatch = useDispatch()
     const token = localStorage.getItem('token');
     const params = useParams()
     const [data, setData] = useState({})
     const [commentId, setCommentId] = useState("")
+    const [refresh, setRrefresh] = useState(false)
+
     useEffect(() => {
         const id = params['*']
         if (id != "") {
@@ -28,18 +32,23 @@ const CommentItem = (props) => {
                     console.log('err:', err)
                 })
         }
-    }, [params])
+    }, [params, refresh])
 
     const [text, setText] = useState('')
+    const [text2, setText2] = useState('')
     const [isReply, setIsReply] = useState(false)
+
     const onSubmit = () => {
         setButtonDisable(true)
         const id = params['*']
-        const data = {
-            text: text
-        }
+        // const data = {
+        //     text: text
+        // }
 
         if (isReply) {
+            const data = {
+                text: text2
+            }
             axios.put(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}/comment/${commentId}/reply`, data,
                 {
                     headers: {
@@ -49,7 +58,12 @@ const CommentItem = (props) => {
                 .then(res => {
                     console.log('reply success:', res)
                     alert('balas komentar berhasi')
-                    window.location.reload()
+                    // window.location.reload()
+                    setRrefresh(!refresh)
+                    dispatch(props.refresh)
+                    setText2('')
+                    setToggle(!toggle)
+                    setIsReply(!isReply)
                 })
                 .catch(err => {
                     alert(err.response.data.message)
@@ -58,6 +72,9 @@ const CommentItem = (props) => {
                     setButtonDisable(false)
                 })
         } else {
+            const data = {
+                text: text
+            }
             axios.put(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}/comment`, data,
                 {
                     headers: {
@@ -67,7 +84,10 @@ const CommentItem = (props) => {
                 .then(res => {
                     console.log('comment success:', res)
                     alert('komentar berhasil')
-                    window.location.reload()
+                    // window.location.reload()
+                    setRrefresh(!refresh)
+                    dispatch(props.refresh)
+                    setText('')
                 })
                 .catch(err => {
                     alert(err.response.data.message)
@@ -86,6 +106,7 @@ const CommentItem = (props) => {
         setToggle(!toggle)
         setIsReply(!isReply)
         setText("")
+        setText2("")
     }
 
     console.log('text:', text)
@@ -107,9 +128,9 @@ const CommentItem = (props) => {
         return (
             <div className="commentItem-co">
                 <div className={toggle ? 'display-block' : "display-none"}>
-                    <ReplyForm hendleToggle={hendleToggle} onSubmit={onSubmit} onChange={e => setText(e.target.value)} buttonDisable={buttonDisable} value={text} />
+                    <ReplyForm hendleToggle={hendleToggle} onSubmit={onSubmit} onChange={e => setText2(e.target.value)} buttonDisable={buttonDisable} value={text2} />
                 </div>
-                <div onClick={props.onClick} className="commentItem-left"/>
+                <div onClick={props.onClick} className="commentItem-left" />
                 <div className="commentItem-wrapper">
                     <div className="commentItem-title-wrapper">
                         <p className="commentItem-title">{data.title}</p>
@@ -120,7 +141,7 @@ const CommentItem = (props) => {
                     <div className="commentItem-scrollBox">
                         <p className="comment-count">{totalCount} komentar</p>
                         <div className="comment-form">
-                            <textarea placeholder="Ketik komentar" className="comment-textArea" onChange={e => setText(e.target.value)} />
+                            <textarea placeholder="Ketik komentar" className="comment-textArea" onChange={e => setText(e.target.value)} value={text} />
                             <div className={buttonDisable ? "comment-button2" : "comment-button"}>
                                 <Button title="Komen" onClick={onSubmit} />
                             </div>

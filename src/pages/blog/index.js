@@ -102,7 +102,7 @@ const Blog = () => {
     return (
         <div className="blog-co" >
             <div className={isLocked ? 'comment-action2' : 'comment-action'}>
-                <CommentItem onClick={scrollToggle} />
+                <CommentItem onClick={scrollToggle} refresh = {() => setRrefresh(!refresh)} />
             </div>
             <div>
                 <Header />
