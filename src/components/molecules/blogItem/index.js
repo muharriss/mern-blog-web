@@ -37,7 +37,7 @@ const BlogItem = (props) => {
     // console.log("loading", loading)
     const handleHidden = () => {
         setLoading(true)
-        axios.put(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${props._id}/status`, {},
+        axios.put(`https://mern-blog-api-server.vercel.app/v1/blog/post/${props._id}/status`, {},
             {
                 headers: {
                     'Authorization': `Bearer ${token}`

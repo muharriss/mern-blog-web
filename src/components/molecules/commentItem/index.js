@@ -18,7 +18,7 @@ const CommentItem = (props) => {
     useEffect(() => {
         const id = params['*']
         if (id != "") {
-            axios.get(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}`,
+            axios.get(`https://mern-blog-api-server.vercel.app/v1/blog/post/${id}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -49,7 +49,7 @@ const CommentItem = (props) => {
             const data = {
                 text: text2
             }
-            axios.put(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}/comment/${commentId}/reply`, data,
+            axios.put(`https://mern-blog-api-server.vercel.app/v1/blog/post/${id}/comment/${commentId}/reply`, data,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -75,7 +75,7 @@ const CommentItem = (props) => {
             const data = {
                 text: text
             }
-            axios.put(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}/comment`, data,
+            axios.put(`https://mern-blog-api-server.vercel.app/v1/blog/post/${id}/comment`, data,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`

@@ -50,7 +50,7 @@ const Blog = () => {
                     label: 'Ya',
                     onClick: () => {
                         const token = localStorage.getItem('token');
-                        axios.delete(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}`,
+                        axios.delete(`https://mern-blog-api-server.vercel.app/v1/blog/post/${id}`,
                             {
                                 headers: {
                                     'Authorization': `Bearer ${token}`

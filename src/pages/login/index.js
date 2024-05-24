@@ -15,7 +15,7 @@ const Login = () => {
             username: username,
             password: password
         }
-        axios.post('https://mern-blog-api.cyclic.cloud/v1/auth/login', data)
+        axios.post('https://mern-blog-api-server.vercel.app/v1/auth/login', data)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
                 console.log('login success', res)

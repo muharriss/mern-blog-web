@@ -16,7 +16,7 @@ const Register = () => {
             username: username,
             password: password
         }
-        axios.post('https://mern-blog-api.cyclic.cloud/v1/auth/register', data)
+        axios.post('https://mern-blog-api-server.vercel.app/v1/auth/register', data)
             .then(res => {
                 console.log('register success', res)
                 alert('register success')

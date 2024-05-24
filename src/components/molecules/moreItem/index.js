@@ -18,7 +18,7 @@ const MoreItem = (props) => {
                     onClick: () => {
 
                         const token = localStorage.getItem('token');
-                            axios.delete(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${props._id}/comment/${props.commentId}`,
+                            axios.delete(`https://mern-blog-api-server.vercel.app/v1/blog/post/${props._id}/comment/${props.commentId}`,
                                 {
                                     headers: {
                                         'Authorization': `Bearer ${token}`

@@ -11,7 +11,7 @@ const DetailBlog = () => {
     const [data, setData] = useState({})
     useEffect(() => {
         const id = params.id
-        axios.get(`https://mern-blog-api.cyclic.cloud/v1/blog/post/${id}`,
+        axios.get(`https://mern-blog-api-server.vercel.app/v1/blog/post/${id}`,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
